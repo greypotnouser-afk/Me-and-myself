@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ffe6f2; 
+  
+    background-image: radial-gradient(#ffb3d9 2px, transparent 2px);
+    background-size: 30px 30px;
+    font-family: 'Caveat', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="%23ff66b2"/></svg>') 12 12, auto;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+.title {
+    font-size: 3rem;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+    transform: rotate(-2deg); 
+    text-shadow: 2px 2px 0px #ffb3d9;
+}
+
+.profile-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.profile-wrapper:hover {
+    transform: scale(1.05) rotate(1deg);
+}
+
+.profile-wrapper:active {
+    transform: scale(0.95);
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    
+    border-radius: 20px;
+    
+    border: 4px solid #333;
+    box-shadow: 8px 8px 0px #ffb3d9, -2px -2px 0px #fff;
+    position: relative;
+    z-index: 2;
+    background: #fff;
+}
+
+.ears {
+    position: absolute;
+    top: -35px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+}
+
+.ear {
+    transform-origin: bottom center;
+    transition: transform 0.2s;
+}
+
+
+.profile-wrapper:hover .left-ear {
+    transform: rotate(-10deg);
+}
+.profile-wrapper:hover .right-ear {
+    transform: rotate(10deg);
+}
+
+.tail-container {
+    position: absolute;
+    bottom: 10px;
+    right: -35px;
+    width: 50px;
+    height: 100px;
+    z-index: 1;
+}
+
+.tail {
+    transform-origin: top left;
+    animation: wag 3s ease-in-out infinite;
+}
+
+@keyframes wag {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(15deg); }
+    100% { transform: rotate(0deg); }
+}
+
+
+.profile-wrapper:active .tail {
+    animation: fastWag 0.2s infinite;
+}
+
+@keyframes fastWag {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(25deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.bio {
+    margin-top: 30px;
+    font-size: 2rem;
+    color: #555;
+    background: #fff;
+    padding: 5px 20px;
+    
+    border: 2px solid #333;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; 
+    display: inline-block;
+    transform: rotate(1deg);
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+}
